@@ -1,0 +1,61 @@
+<nav>
+    <div class="logo">
+        <img src="images/logo.png" alt="Fit N' Flex Logo">
+    </div>
+    <div class="menu-button" id="menu-button">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul class="navbar" id="navbar">
+        <li><a href="home.php">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="home.php#workout-plans">Workout Plans</a></li>
+        <li><a href="Diet.php">Nutrition & Diet</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+       <!-- <button id="start-recognition">Start Voice Assistant</button> -->
+        <?php if (isset($_SESSION['user'])): ?>
+        <?php if (isset($_SESSION['user'])): ?>
+        <li>Welcome, <?php echo htmlspecialchars($_SESSION['user']); ?>!</li>
+        <li><a href="logout.php" class="logout-btn">Logout</a></li>
+ <!--   <?php else: ?
+        <li><a href="login.php" class="login-btn">Login</a></li>
+        <li><a href="singup.php" class="register-btn">Register</a></li>
+    <?php endif; ?  -->
+    
+    </ul>
+</nav>
+
+<style>
+    /* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #090b69b6; /* Adjust as needed */
+}
+
+.logo img {
+    max-height: 50px; /* Adjust for desired logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Space between navbar items */
+}
+
+.navbar a {
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 10px 15px; /* Button-like padding */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for smoother effects */
+}
+
+.navbar a:hover {
+    background-color: #13bcf04b; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+</style>

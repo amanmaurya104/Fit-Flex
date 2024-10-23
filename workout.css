@@ -1,0 +1,294 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures full height */
+}
+
+/* Center Content Globally */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+    flex: 1; /* Expands container to take available space */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #090b69b6; /* Adjust as needed */
+}
+
+.logo img {
+    max-height: 50px; /* Adjust for desired logo height */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.navbar {
+    list-style-type: none;
+    display: flex;
+    gap: 15px; /* Space between navbar items */
+}
+
+.navbar a {
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 10px 15px; /* Button-like padding */
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform for smoother effects */
+}
+
+.navbar a:hover {
+    background-color: #13bcf04b; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 0; /* Remove padding to maximize height */
+    height: 100vh; /* Full viewport height */
+    background: url('images/background.webp') no-repeat center center;
+    background-size: cover; /* Ensure the image covers the area */
+    color: white;
+    overflow: hidden; /* Prevent overflow */
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    background: inherit; /* Use the same background */
+    filter: blur(10px); /* Adjust the blur intensity */
+    z-index: 0;
+}
+
+.hero > * {
+    position: relative; /* Keep text above the blur */
+    z-index: 1;
+}
+
+.hero-text {
+    color: white; /* Ensure text is readable */
+    padding: 10px;
+}
+
+.hero-text h1 {
+    font-size: 2.5em; /* Adjust size as needed */
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+
+/* Button Styles */
+.container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+}
+
+.cta-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Workout Section Styles */
+.workout-section {
+    margin: 30px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    width: 85%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.workout-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.workout-section h2 {
+    cursor: pointer;
+    padding: 20px;
+    background-color: #292b2c;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.workout-section h2:hover {
+    background-color: #f7b731;
+    transform: scale(1.05);
+}
+
+.workout-content {
+    display: none;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.active .workout-content {
+    display: block;
+}
+
+.workout-content p {
+    margin: 10px 0;
+}
+
+video {
+    width: 50%;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Centering Buttons for Different Workouts */
+.page-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.page-buttons a {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.page-buttons a:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    margin-top: auto; /* Stick footer to the bottom */
+}
+
+.footer-links,
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-links a,
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-links a:hover,
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 80px 10px;
+    }
+
+    .workout-section {
+        width: 100%;
+    }
+
+    .page-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Menu Button for Mobile */
+.menu-button {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Responsive Design for Menu Button */
+@media (max-width: 768px) {
+    .menu-button {
+        display: block;
+    }
+
+    .navbar {
+        
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        z-index: 10;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        padding: 10px;
+    }
+}
